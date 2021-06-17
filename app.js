@@ -52,15 +52,25 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/demo", 
-        function (req, res){res.render("demo");});
-
 app.get("/about", (request, response) => {
   response.render("about");
 });
 
 app.get("/form", (request,response) => {
   response.render("form")
+})
+
+app.get("/demo", (request, response) => {
+  response.render("demo");
+});
+
+app.post("/dataform", (request,response) => {
+  response.locals.name=request.body.name
+  response.locals.time=request.body.time
+  response.locals.count=request.body.count
+  response.locals.gender=request.body.gender
+  response.locals.age_section=request.body.age_section
+  response.render("dataDemo")
 })
 
 app.post("/showformdata", (request,response) => {
@@ -75,7 +85,7 @@ app.post("/showformdata", (request,response) => {
 // and send it back to the browser in raw JSON form, see
 // https://covidtracking.com/data/api
 // for all of the kinds of data you can get
-app.get("/c19", 
+app.get("/c19",
   async (req,res,next) => {
     try {
       const url = "https://covidtracking.com/api/v1/us/current.json"
