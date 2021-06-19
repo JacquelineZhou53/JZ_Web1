@@ -1,0 +1,79 @@
+<%- include('bootheader') -%>
+<%- include('menubar') -%>
+<div class="jumbotron">
+    <h1>This is the Demo page</h1>
+    <p>Including h1, a, img, ul, table, form, button, input, select, row/col</p>
+</div>
+
+<h2>Unordered list demo</h2>
+<ul>
+    <li>first item</li>
+    <li>second item</li>
+    <ul>
+      <li>minor first item</li>
+      <li>minor second item</li>
+    </ul>
+</ul>
+
+<h2>Table demo</h2>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Infected Person</th>
+      <th>Infected Time</th>
+      <th>Cumulative Spread Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td>Jan 7</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>Jan 11</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>Jan 12</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Form demo</h2>
+<p>Includes form, button, input, select, row/col</p>
+<form action="/dataform" method="post"">
+  <div class="row">
+    <div class="col">
+      <br>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br>
+      <label for="time">Infected Time:</label>
+      <input type="date" id="time" name="time"><br>
+      <label for="count">Infection count:</label>
+      <input type="number" id="count" name="count"><br>
+      <br>
+    </div>
+    <div class="col">
+      <br>
+      <h5>Additional Information:</h5>
+      What is your gender:<br>
+        <select name="gender">
+          <option>Female</option>
+          <option>Male</option>
+          <option>Other</option>
+        </select><br><br>
+      Which one is your age period?<br>
+        0-16 <input type="radio" name="age_section" value="0-16"><br>
+        17-35<input type="radio" name="age_section" value="17-35"><br>
+        35-55<input type="radio" name="age_section" value="35-55"><br>
+        55+  <input type="radio" name="age_section" value="55+"><br>
+      <button type="submit">Complete registration</button>
+    </div>
+  </div>
+</form>
+
+<%- include('bootfooter') -%>

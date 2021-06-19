@@ -12,6 +12,10 @@ const session = require("express-session");
 const axios = require("axios");
 var debug = require("debug")("personalapp:server");
 
+const mongoose = require( 'mongoose' );
+//mongoose.connect( `mongodb+srv://${auth.atlasAuth.username}:${auth.atlasAuth.password}@cluster0-yjamu.mongodb.net/authdemo?retryWrites=true&w=majority`);
+mongoose.connect( 'mongodb+srv://JacquelineZhou53:<password>@cluster0.umfnn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+
 // Now we create the server
 const app = express();
 
@@ -62,6 +66,10 @@ app.get("/form", (request,response) => {
 
 app.get("/demo", (request, response) => {
   response.render("demo");
+});
+
+app.get("/patient", (request, response) => {
+  response.render("patient");
 });
 
 app.post("/dataform", (request,response) => {
